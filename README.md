@@ -6,6 +6,9 @@
 
 # Computer Resource Monitoring which display pop-up notification and send automated alerting email if condition is not met.
 
+
+![System WATCHDOG.gif](https://github.com/IT-Support-L2/System-WATCHDOG/blob/main/System%20WATCHDOG.gif)
+
 # Coming imporvements:
 
   - Design improvement
