@@ -31,7 +31,7 @@ What is RAM?
 
 Random-access memory or RAM is a form of computer memory that can be read and changed in any order, typically used to store working data and machine code. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory.
 
-What should I input in RAM tab?
+# What should I input in RAM tab?
 
 Let’s say your computer or server has 32GB RAM and in normal state, it does not consume more than 20GB as an example so if it’s consuming more, it means something wrong. To receive an alert of RAM exceeding 20GB, simply input 20. 
 
@@ -43,7 +43,7 @@ Let’s say your computer or server has 32GB RAM and in normal state, it does no
 Computer data storage is a technology consisting of computer components and recording media that are used to retain digital data. It is a core function and fundamental component of computers. The central processing unit (CPU) of a computer is what manipulates data by performing computations. 
 In Windows, storage is monitored using percentage unit measurement.
 
-What should I input in Storage tab?
+# What should I input in Storage tab?
 
 Sure, you don’t want your server or computer exceed 80% of its storage without getting notified, so simply input 80, as an example.
 
@@ -64,7 +64,7 @@ As an example: 8.8.8.8 which is Google Public DNS.
 
 Upload speed is the number of bytes per second you can send. For a normal ADSL subscription, usually the upload speed is around 1.5 Mbps.
 
-What should I input in Upload Speed Check tab?
+# What should I input in Upload Speed Check tab?
 
 For example, let’s say you want to get notified as Upload Speed drops under 
 1 Mbps, simply input 1.
@@ -74,7 +74,7 @@ For example, let’s say you want to get notified as Upload Speed drops under
 # What is Download Speed?
 Download speed is the rate your connection receives data.
 
-What should I input in Download Speed Check tab?
+# What should I input in Download Speed Check tab?
 
 If you have for example 20 Mbps Download Speed and you need to be notified as it drops under 15 Mbps, then input 15.
 
