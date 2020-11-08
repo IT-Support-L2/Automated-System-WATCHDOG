@@ -4,7 +4,7 @@
 
 # successfully tested on Windows 10 pro.
 
-# Computer Resource Monitoring whicl will display pop-up notification and send automated alerting email if condition is not met.
+# Computer Resource Monitoring which display pop-up notification and send automated alerting email if condition is not met.
 
 # Coming imporvements:
 
