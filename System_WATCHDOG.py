@@ -1358,6 +1358,7 @@ class App():
         if any, to sign a "copyright disclaimer" for the program, if necessary.
         For more information on this, and how to apply and follow the GNU AGPL, see
         <https://www.gnu.org/licenses/>. ''')
+
         self.License_Scrolledtext.configure(state='disabled')
 
         self.Label1 = tk.Label(self.TNotebook1_t4_1)
@@ -1543,39 +1544,39 @@ class App():
         n = ToastNotifier()
 
         if not cpu_check():
-            n.show_toast("Warning!", "CPU Usage is greater than ", duration = 10) 
-            subject = 'Alert! - CPU Usage is greater than'
+            n.show_toast("Warning!", "CPU Usage is greater than " + ' ' + str(self.cpu.get()) + '!', duration = 10) 
+            subject = 'Alert! - CPU Usage is greater than ' + ' ' + str(self.cpu.get()) + '!'
             email_warning(subject)
 
         if not disc_space_check():
-            n.show_toast("Warning!", "Available disk space is less than ", duration = 10)
-            subject = "Alert! - Available disk space is less than "
+            n.show_toast("Warning!", "Available disk space is less than " + ' ' + str(self.storage.get()) + '!', duration = 10)
+            subject = "Alert! - Available disk space is less than " + ' ' + str(self.storage.get()) + '!'
             email_warning(subject)
 
         if not available_memory_check():
-            n.show_toast("Warning!", "Available memory is less than ", duration = 10)
-            subject = "Alert! - Available memory is less than "
+            n.show_toast("Warning!", "Available memory is less than " + ' ' + str(self.ram.get()) + '!', duration = 10)
+            subject = "Alert! - Available memory is less than " + ' ' + str(self.ram.get()) + '!'
             email_warning(subject)
 
         if not upload_speed():
-            n.show_toast("Warning!", "Low upload speed! Upload speed is less than")
-            subject = "Alert! - Low upload speed! Upload speed is less than"
+            n.show_toast("Warning!", "Low upload speed! Upload speed is less than " + ' ' + str(self.upload_sp.get()) + '!', duration = 10)
+            subject = "Alert! - Low upload speed! Upload speed is less than "  + ' ' + str(self.upload_sp.get()) + '!'
             email_warning(subject)
 
         if not download_speed():
-            n.show_toast("Warning!", "Low download speed! Download speed is less than")
-            subject = "Alert! - Low download speed! Download speed is less than "
+            n.show_toast("Warning!", "Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + '!', duration=10)
+            subject = "Alert! - Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + '!'
             email_warning(subject)
 
 
         if not latency_check():
-            n.show_toast("Warning!", "High Latency! Latency is higher than")
-            subject = "Alert! - High Latency! Latency is higher than"
+            n.show_toast("Warning!", "High Latency! Latency is higher than " + ' ' + str(self.latency.get()) + '!', duration=10)
+            subject = "Alert! - High Latency! Latency is higher than " + ' ' + str(self.latency.get()) + '!'
             email_warning(subject)
 
         if not ping_ip():
-            n.show_toast("Warning!", "Unreachable IP, Request timed out!")
-            subject = "Alert! - Unreachable IP, Request timed out!"
+            n.show_toast("Warning!", "Unreachable IP, Request timed out! " + ' ' + str(self.Ping.get()) + '!', duration=10)
+            subject = "Alert! - Unreachable IP, Request timed out!" + ' ' + str(self.Ping.get()) + '!'
             email_warning(subject)
 
        
