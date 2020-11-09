@@ -30,7 +30,7 @@ In Windows, CPU is monitored using percentage unit measurement.
 Simply input the CPU usage percentage allowed so if the software detects higher percentage than input, you will be notified by a screen pop-up and an email alert will be automatically sent. As an example, let’s say you do not allow more than 50% CPU usage, simply in CPU tab input 50.
 
 # •	RAM
-What is RAM?
+# What is RAM?
 
 Random-access memory or RAM is a form of computer memory that can be read and changed in any order, typically used to store working data and machine code. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory.
 
@@ -103,6 +103,10 @@ It is the time interval in seconds in which all checks will be executed in loop.
 
 Let’s say, you need to execute all checks every 10 seconds. Simply input 10.
 
+
+# Email Preferences 
+
+
 # •	SMTP
 
 # What is SMTP?
@@ -123,7 +127,7 @@ Input your password.
 
 Important Note: You will not receive automated emails alerts if you are using 2-factor authentication.
 
-Best Suggestion: I suggest to register new email address for this purpose only so if someone breaks through, he/she will only fInd System Automated Emails Alerts only.
+Best Suggestion: I suggest to register new email address for this purpose only.
 
 # •	Receiver Email Address
 
