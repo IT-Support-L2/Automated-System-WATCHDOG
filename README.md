@@ -4,7 +4,7 @@
 
 # successfully tested on Windows 10 pro.
 
-# Computer Resource Monitoring which display pop-up notification and send automated alerting email if condition is not met.
+# Computer Resource Monitoring which display pop-up notification and automated alerting email is sent if conditions are not met.
 
 
 ![System WATCHDOG.gif](https://github.com/IT-Support-L2/System-WATCHDOG/blob/main/System%20WATCHDOG.gif)
