@@ -3,15 +3,16 @@ import threading
 import tkinter as tk
 import tkinter.ttk as ttk
 import psutil, shutil
-import tkinter.font as tkFont
 from pythonping import ping
 from tkinter import *
-from win10toast import ToastNotifier 
+from tkinter import messagebox
 import email.message
 import smtplib
 import speedtest
 import webbrowser
-import mimetypes
+
+
+
 
 
 class App():
@@ -1541,41 +1542,39 @@ class App():
             message = generate_email(sender, receiver, subject, body)
             send_email(message)
 
-        n = ToastNotifier()
-
         if not cpu_check():
-            n.show_toast("Warning!", "CPU Usage is greater than " + ' ' + str(self.cpu.get()) + '!', duration = 10) 
+            messagebox.showwarning("Warning!", "CPU Usage is greater than " + ' ' + str(self.cpu.get()) + '!') 
             subject = 'Alert! - CPU Usage is greater than ' + ' ' + str(self.cpu.get()) + '!'
             email_warning(subject)
 
         if not disc_space_check():
-            n.show_toast("Warning!", "Available disk space is less than " + ' ' + str(self.storage.get()) + '!', duration = 10)
+            messagebox.showwarning("Warning!", "Available disk space is less than " + ' ' + str(self.storage.get()) + '!')
             subject = "Alert! - Available disk space is less than " + ' ' + str(self.storage.get()) + '!'
             email_warning(subject)
 
         if not available_memory_check():
-            n.show_toast("Warning!", "Available memory is less than " + ' ' + str(self.ram.get()) + '!', duration = 10)
+            messagebox.showwarning("Warning!", "Available memory is less than " + ' ' + str(self.ram.get()) + '!')
             subject = "Alert! - Available memory is less than " + ' ' + str(self.ram.get()) + '!'
             email_warning(subject)
 
         if not upload_speed():
-            n.show_toast("Warning!", "Low upload speed! Upload speed is less than " + ' ' + str(self.upload_sp.get()) + '!', duration = 10)
+            messagebox.showwarning("Warning!", "Low upload speed! Upload speed is less than " + ' ' + str(self.upload_sp.get()) + '!')
             subject = "Alert! - Low upload speed! Upload speed is less than "  + ' ' + str(self.upload_sp.get()) + '!'
             email_warning(subject)
 
         if not download_speed():
-            n.show_toast("Warning!", "Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + '!', duration=10)
+            messagebox.showwarning("Warning!", "Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + '!')
             subject = "Alert! - Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + '!'
             email_warning(subject)
 
 
         if not latency_check():
-            n.show_toast("Warning!", "High Latency! Latency is higher than " + ' ' + str(self.latency.get()) + '!', duration=10)
+            messagebox.showwarning("Warning!", "High Latency! Latency is higher than " + ' ' + str(self.latency.get()) + '!')
             subject = "Alert! - High Latency! Latency is higher than " + ' ' + str(self.latency.get()) + '!'
             email_warning(subject)
 
         if not ping_ip():
-            n.show_toast("Warning!", "Unreachable IP, Request timed out! " + ' ' + str(self.Ping.get()) + '!', duration=10)
+            messagebox.showwarning("Warning!", "The" + " " + str(self.Ping.get()) + " " + "IP Address is unreachable, Request timed out!")
             subject = "Alert! - Unreachable IP, Request timed out!" + ' ' + str(self.Ping.get()) + '!'
             email_warning(subject)
 
@@ -1636,7 +1635,6 @@ class AutoScroll(object):
 
     @staticmethod
     def _autoscroll(sbar):
-        '''Hide and show scrollbar as needed.'''
         def wrapped(first, last):
             first, last = float(first), float(last)
             if first <= 0 and last >= 1:
@@ -1664,7 +1662,7 @@ class ScrolledText(AutoScroll, tk.Text):
         tk.Text.__init__(self, master, **kw)
         AutoScroll.__init__(self, master)
 
-import platform
+
 def _bound_to_mousewheel(event, widget):
     child = widget.winfo_children()[0]
     
