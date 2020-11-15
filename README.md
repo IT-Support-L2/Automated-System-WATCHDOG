@@ -6,6 +6,10 @@
 
 # Computer Resource Monitoring which display pop-up notification and automated alerting email is sent if conditions are not met.
 
+To successfully compile code with pyinstaller: You need to aadd icon path for show_toast notification and do not use --windowed flag. Sinmply run this command:
+
+# pyinstaller --onefile myfile.py
+
 
 ![System WATCHDOG.gif](https://github.com/IT-Support-L2/System-WATCHDOG/blob/main/System%20WATCHDOG.gif)
 
@@ -148,6 +152,10 @@ If you need to update your inputs or you don’t want to keep System WATCHDOG ru
 # •	Why after clicking on Stop, I still getting po-up notifications and alerting emails?
 
 When you click on Stop, System WTACHDOG will be stopped after finishing the running threads or the running tasks, so it’s a very normal behavior. 
+
+
+
+# If you find Automated System WD useful, feel free to buy me cigarettes and coffees at https://www.paypal.com/paypalme/HamdiBouaskar
 
 
 
