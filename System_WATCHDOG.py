@@ -5,7 +5,7 @@ import tkinter.ttk as ttk
 import psutil, shutil
 from pythonping import ping
 from tkinter import *
-from tkinter import messagebox
+from win10toast import ToastNotifier
 import email.message
 import smtplib
 import speedtest
@@ -531,13 +531,13 @@ class App():
         self.SysPref_Scrolledtext.configure(insertborderwidth="3")
         self.SysPref_Scrolledtext.configure(selectbackground="blue")
         self.SysPref_Scrolledtext.configure(selectforeground="white")
-        self.SysPref_Scrolledtext.configure(wrap="none")
+        self.SysPref_Scrolledtext.configure(wrap='none')
         self.SysPref_Scrolledtext.insert(tk.END,'''
         
         System Preferences Inputs
 
 
-        •  CPU 
+        •  CPU
 
         What is CPU? 
 
@@ -1474,39 +1474,22 @@ class App():
 
 
     def health_check(self):
-
+        t = ToastNotifier()
         def cpu_check():
             cpu_usage = psutil.cpu_percent() 
             return cpu_usage < self.cpu.get()
         
+        def available_memory_check():
+            available = psutil.virtual_memory().available
+            available_in_GB = available / 1000000000
+            return available_in_GB >= self.ram.get()
+
         def disc_space_check():  
             disk_usage = shutil.disk_usage("/")
             disk_total = disk_usage.total
             disk_free = disk_usage.used
             threshold = disk_free / disk_total * 100
             return threshold > self.storage.get()
-        
-        def available_memory_check():
-            available = psutil.virtual_memory().available
-            available_in_GB = available / 1000000000
-            return available_in_GB >= self.ram.get()
-        
-        def upload_speed():
-            st = speedtest.Speedtest()
-            upload_s = round(st.upload()/1000000, 2)
-            return upload_s >= self.upload_sp.get()
-        
-        def download_speed():
-            st = speedtest.Speedtest() 
-            download_s = round(st.download()/1000000, 2)
-            return download_s >= self.download_sp.get()
-        
-
-        def latency_check():
-            st = speedtest.Speedtest() 
-            st.get_best_server()
-            return st.results.ping <= self.latency.get()
-        
 
         def ping_ip():
 
@@ -1515,6 +1498,22 @@ class App():
             l = list(ping(p))
 
             return str(l[0]).startswith('Reply')
+        
+        def upload_speed():
+            s = speedtest.Speedtest()
+            upload_s = round(s.upload()/1000000, 2)
+            return upload_s >= self.upload_sp.get()
+        
+        def download_speed():
+            s = speedtest.Speedtest() 
+            download_s = round(s.download()/1000000, 2)
+            return download_s >= self.download_sp.get()
+        
+
+        def latency_check():
+            s = speedtest.Speedtest() 
+            s.get_best_server()
+            return s.results.ping <= self.latency.get()
 
         def generate_email(sender, receiver, subject, body): 
 
@@ -1543,38 +1542,38 @@ class App():
             send_email(message)
 
         if not cpu_check():
-            messagebox.showwarning("Warning!", "CPU Usage is greater than " + ' ' + str(self.cpu.get()) + '!') 
+            t.show_toast("Warning!", "CPU Usage is greater than " + ' ' + str(self.cpu.get()) + '!', icon_path='C:\\Users\\blu_o\\Desktop\\folder\\alarm.ico', duration=5) 
             subject = 'Alert! - CPU Usage is greater than ' + ' ' + str(self.cpu.get()) + '!'
             email_warning(subject)
 
         if not disc_space_check():
-            messagebox.showwarning("Warning!", "Available disk space is less than " + ' ' + str(self.storage.get()) + '!')
+            t.show_toast("Warning!", "Available disk space is less than " + ' ' + str(self.storage.get()) + '!', icon_path='C:\\Users\\blu_o\\Desktop\\folder\\alarm.ico', duration=5)
             subject = "Alert! - Available disk space is less than " + ' ' + str(self.storage.get()) + '!'
             email_warning(subject)
 
         if not available_memory_check():
-            messagebox.showwarning("Warning!", "Available memory is less than " + ' ' + str(self.ram.get()) + '!')
-            subject = "Alert! - Available memory is less than " + ' ' + str(self.ram.get()) + '!'
+            t.show_toast("Warning!", "Available memory is less than " + ' ' + str(self.ram.get()) + ' GB' + '!', icon_path='C:\\Users\\blu_o\\Desktop\\folder\\alarm.ico', duration=5)
+            subject = "Alert! - Available memory is less than " + ' ' + str(self.ram.get()) + ' Mbps' + '!'
             email_warning(subject)
 
         if not upload_speed():
-            messagebox.showwarning("Warning!", "Low upload speed! Upload speed is less than " + ' ' + str(self.upload_sp.get()) + '!')
-            subject = "Alert! - Low upload speed! Upload speed is less than "  + ' ' + str(self.upload_sp.get()) + '!'
+            t.show_toast("Warning!", "Low upload speed! Upload speed is less than " + ' ' + str(self.upload_sp.get()) + ' Mbps' + '!', icon_path='C:\\Users\\blu_o\\Desktop\\folder\\alarm.ico', duration=5)
+            subject = "Alert! - Low upload speed! Upload speed is less than "  + ' ' + str(self.upload_sp.get()) + ' Mbps' + '!'
             email_warning(subject)
 
         if not download_speed():
-            messagebox.showwarning("Warning!", "Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + '!')
-            subject = "Alert! - Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + '!'
+            t.show_toast("Warning!", "Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + ' Mbps' + '!', icon_path='C:\\Users\\blu_o\\Desktop\\folder\\alarm.ico', duration=5)
+            subject = "Alert! - Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + ' Mbps' + '!'
             email_warning(subject)
 
 
         if not latency_check():
-            messagebox.showwarning("Warning!", "High Latency! Latency is higher than " + ' ' + str(self.latency.get()) + '!')
-            subject = "Alert! - High Latency! Latency is higher than " + ' ' + str(self.latency.get()) + '!'
+            t.show_toast("Warning!", "High Latency! Latency is higher than " + ' ' + str(self.latency.get()) + ' MS' + '!', icon_path='C:\\Users\\blu_o\\Desktop\\folder\\alarm.ico', duration=5)
+            subject = "Alert! - High Latency! Latency is higher than " + ' ' + str(self.latency.get()) + ' MS' + '!'
             email_warning(subject)
 
         if not ping_ip():
-            messagebox.showwarning("Warning!", "The" + " " + str(self.Ping.get()) + " " + "IP Address is unreachable, Request timed out!")
+            t.show_toast("Warning!", "The" + " " + str(self.Ping.get()) + " " + "IP Address is unreachable, Request timed out!", icon_path='C:\\Users\\blu_o\\Desktop\\folder\\alarm.ico', duration=5)
             subject = "Alert! - Unreachable IP, Request timed out!" + ' ' + str(self.Ping.get()) + '!'
             email_warning(subject)
 
