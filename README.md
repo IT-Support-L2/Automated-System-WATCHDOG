@@ -6,7 +6,7 @@
 
 # Computer Resource Monitoring which display pop-up notification and automated alerting email is sent if conditions are not met.
 
-To successfully compile code with pyinstaller: You need to aadd icon path for show_toast notification and do not use --windowed flag. Sinmply run this command:
+# To successfully compile code with pyinstaller: You need to aadd icon path for show_toast notification and do not use --windowed flag. Sinmply run this command:
 
 # pyinstaller --onefile myfile.py
 
