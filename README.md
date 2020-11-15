@@ -1,8 +1,8 @@
-# System-WATCHDOG
+# Automated System WATCHDOG for Windows platform.
 
 # Coded from the scratch using python 3.8.5 and tkinter.
 
-# successfully tested on Windows 10 pro.
+# successfully tested on Windows 10 pro and Windows Server 2016.
 
 # Computer Resource Monitoring which display pop-up notification and automated alerting email is sent if conditions are not met.
 
@@ -11,9 +11,10 @@
 
 # Coming imporvements:
 
-  - Design improvement
-  - Linux and Mac Support
+  - Linux version
   - Error message notification such as incorecct password or incorrect email address ect...
+  
+# All inputs are mandatory!
 
 # System Preferences Inputs
 
@@ -138,7 +139,7 @@ Hint: It could be the sender’s email address as well.
 
 # What does Start button do?
 
-Once you click on Start, System WATCHDOG will start monitoring your computer resources and watch over your computer or server. After each time interval (seconds), If one or more condition(s) are not met, you will get screen pop-up notification and an automated email will be sent to the receiver using sender’s smtp server address, email address and password.
+Once you click on Start, System WATCHDOG will start monitoring your computer resources and watch over your computer or server. It will start by running first check than after each time interval (seconds), If one or more condition(s) are not met, you will get screen pop-up notification and an automated email will be sent to the receiver using sender’s smtp server address, email address and password.
 
 # •	What does Stop button do?
 
