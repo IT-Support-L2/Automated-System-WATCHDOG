@@ -1,21 +1,18 @@
 # Automated System WATCHDOG for Windows platform.
 
-# Coded from the scratch using python 3.8.5 and tkinter.
+Coded from the scratch using python 3.8.5 and tkinter. I used While loop with tkinter, if you are tkinter coder, you should know that I broke the limits!
 
-# successfully tested on Windows 10 pro and Windows Server 2016.
+successfully tested on Windows 10 pro and Windows Server 2016.
 
-# Computer Resource Monitoring which display pop-up notification and automated alerting email is sent if conditions are not met.
+Computer Resource Monitoring which display pop-up notification and automated alerting email is sent if conditions are not met.
 
-# To successfully compile code with pyinstaller: You need to add icon_path for show_toast notification and do not use --windowed flag. Simply compile it using pyinstaller by  running this command:
-
-# pyinstaller --onefile myfile.py
+To successfully compile code with pyinstaller: You need to add icon_path for show_toast notification and do not use --windowed flag. Simply compile it using pyinstaller by  running this command:   pyinstaller --onefile myfile.py
 
 
 ![System WATCHDOG.gif](https://github.com/IT-Support-L2/System-WATCHDOG/blob/main/SWD.gif)
 
 # Coming imporvements:
 
-  - Linux version
   - Error message notification such as incorecct password or incorrect email address ect...
   
 # All inputs are mandatory!
