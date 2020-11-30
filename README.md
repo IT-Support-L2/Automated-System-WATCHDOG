@@ -11,7 +11,7 @@
 # pyinstaller --onefile myfile.py
 
 
-![System WATCHDOG.gif](https://github.com/IT-Support-L2/System-WATCHDOG/blob/main/System%20WATCHDOG.gif)
+![System WATCHDOG.gif](https://github.com/IT-Support-L2/System-WATCHDOG/blob/main/SWD.gif)
 
 # Coming imporvements:
 
