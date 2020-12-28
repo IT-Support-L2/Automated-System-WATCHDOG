@@ -1553,17 +1553,17 @@ class App():
 
         if not available_memory_check():
             t.show_toast("Warning!", "Available memory is less than " + ' ' + str(self.ram.get()) + ' GB' + '!', icon_path='C:\\Users\\blu_o\\Desktop\\folder\\alarm.ico', duration=5)
-            subject = "Alert! - Available memory is less than " + ' ' + str(self.ram.get()) + ' Mbps' + '!'
+            subject = "Alert! - Available memory is less than " + ' ' + str(self.ram.get()) + ' GB' + '!'
             email_warning(subject)
 
         if not upload_speed():
-            t.show_toast("Warning!", "Low upload speed! Upload speed is less than " + ' ' + str(self.upload_sp.get()) + ' Mbps' + '!', icon_path='C:\\Users\\blu_o\\Desktop\\folder\\alarm.ico', duration=5)
-            subject = "Alert! - Low upload speed! Upload speed is less than "  + ' ' + str(self.upload_sp.get()) + ' Mbps' + '!'
+            t.show_toast("Warning!", "Low upload speed! Upload speed is less than " + ' ' + str(self.upload_sp.get()) + ' MB' + '!', icon_path='C:\\Users\\blu_o\\Desktop\\folder\\alarm.ico', duration=5)
+            subject = "Alert! - Low upload speed! Upload speed is less than "  + ' ' + str(self.upload_sp.get()) + ' MB' + '!'
             email_warning(subject)
 
         if not download_speed():
-            t.show_toast("Warning!", "Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + ' Mbps' + '!', icon_path='C:\\Users\\blu_o\\Desktop\\folder\\alarm.ico', duration=5)
-            subject = "Alert! - Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + ' Mbps' + '!'
+            t.show_toast("Warning!", "Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + ' MB' + '!', icon_path='C:\\Users\\blu_o\\Desktop\\folder\\alarm.ico', duration=5)
+            subject = "Alert! - Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + ' MB' + '!'
             email_warning(subject)
 
 
