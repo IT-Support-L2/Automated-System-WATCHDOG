@@ -99,7 +99,7 @@ As an example, to receive instant alert for latency over 35 MS, input 35.
 
 # What is Timer?
 
-It is the time interval in seconds in which all checks will be executed in loop.
+It is the time interval in seconds in which all checks will be executed in  infinite loop unless you click on Stop. I recommend to set it to 60 which equals to 60 seconds.
 
 # What should I input?
 
@@ -145,6 +145,10 @@ Once you click on Start, System WATCHDOG will start monitoring your computer res
 # •	What does Stop button do?
 
 If you need to update your inputs or you don’t want to keep System WATCHDOG running, simply click on Stop.
+
+# • Why after clicking on Start, the software start instantly monitoring while the time interval is set to 60 seconds?
+
+SWD or System WatchDog will instantly run a first and only 1 thread regardless of the time interval you set.
 
 # •	Why after clicking on Stop, I still getting po-up notifications and alerting emails?
 
