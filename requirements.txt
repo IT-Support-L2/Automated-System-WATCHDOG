@@ -1,0 +1,6 @@
+psutil==5.8.0
+pypiwin32==223
+pythonping==1.0.15
+pywin32==300
+speedtest==0.0.1
+win10toast==0.9
