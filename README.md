@@ -6,7 +6,11 @@ successfully tested on Windows 10 pro and Windows Server 2016.
 
 Computer Resource Monitoring which display pop-up notification and automated alerting email is sent if conditions are not met.
 
-To successfully compile code with pyinstaller: You need to add icon_path for show_toast notification and do not use --windowed flag. Simply compile it using pyinstaller by  running this command:   pyinstaller --onefile myfile.py
+To successfully compile code with pyinstaller: 
+
+- First install needed librairies with  `pip install -r requirements.txt`
+- Add icon_path for show_toast notification.
+- Compile the code using pyinstaller by running this command:   `pyinstaller --onefile myfile.py`
 
 
 ![System WATCHDOG.gif](https://github.com/IT-Support-L2/System-WATCHDOG/blob/main/SWD.gif)
