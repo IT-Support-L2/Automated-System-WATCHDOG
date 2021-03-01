@@ -1,6 +1,7 @@
 # Automated System WATCHDOG for Windows platform.
 
-Coded from the scratch using python 3.8.5 and tkinter. I used While loop with tkinter, if you are tkinter coder, you should know that I broke the limits!
+Using PAGE as GUI designer but I modified many parts of the generted code to exactly meet my needs. 
+Using python 3.8.5 and tkinter. I used While loop with tkinter which should cause GUI freeze but I bypassed this inconvenience and I broke the limits! 🙏🙏🙏
 
 successfully tested on Windows 10 pro and Windows Server 2016.
 
