@@ -160,8 +160,8 @@ SWD or System WatchDog will instantly run a first and only 1 thread regardless o
 When you click on Stop, System WTACHDOG will be stopped after finishing the running threads or the running tasks, so it’s a very normal behavior. 
 
 
-# I am IT Support Specialist and I know there is almost no free monitoring software which send email alerts so probably I saved you from the minimum of $100 monthly software subscription, hence, show me some gratitude by donating the humble amount of $10 at https://www.paypal.com/paypalme/HamdiBouaskar and I will assist you for every detail you need. Cheers.
 
+Cheers 🙂
 
 
 
