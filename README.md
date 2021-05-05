@@ -16,9 +16,6 @@ To successfully compile code with pyinstaller:
 
 ![System WATCHDOG.gif](https://github.com/IT-Support-L2/System-WATCHDOG/blob/main/SWD.gif)
 
-# Coming imporvements:
-
-  - Error message notification such as incorecct password or incorrect email address ect...
   
 # All inputs are mandatory!
 
