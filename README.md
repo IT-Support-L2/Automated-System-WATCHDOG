@@ -1,9 +1,9 @@
-# Automated System WATCHDOG for Windows platform.
+# SAW: System Automated Watchdog for Windows.
 
 Using PAGE as GUI drawer but I modified many parts of the generated GUI code to exactly meet my needs. 
 Using python 3.8.5 and tkinter. I used While loop with tkinter which should cause GUI freeze but I bypassed this inconvenience and I broke the limits! 🙏🙏🙏
 
-successfully tested on Windows 10 pro and Windows Server 2016.
+successfully tested on Windows 10 pro and Windows Server 2016/2019.
 
 Computer Resource Monitoring which display pop-up notification and automated alerting email is sent if conditions are not met.
 
@@ -11,7 +11,7 @@ To successfully compile code with pyinstaller:
 
 - First install needed librairies with  `pip install -r requirements.txt`
 - Add icon_path for show_toast notification.
-- Compile the code using pyinstaller by running this command:   `pyinstaller --onefile myfile.py`
+- Compile the code using pyinstaller by running this command:   `pyinstaller --onefile myfile.py` or install the software via the provided setup.
 
 
 ![System WATCHDOG.gif](https://github.com/IT-Support-L2/System-WATCHDOG/blob/main/SWD.gif)
@@ -142,19 +142,21 @@ Hint: It could be the sender’s email address as well.
 
 # What does Start button do?
 
-Once you click on Start, System WATCHDOG will start monitoring your computer resources and watch over your computer or server. It will start by running first check than after each time interval (seconds), If one or more condition(s) are not met, you will get screen pop-up notification and an automated email will be sent to the receiver using sender’s smtp server address, email address and password.
+Once you click on Start, System Automated Watchdog will start monitoring your computer resources and watch over your computer or server. It will start by running first check than after each time interval (seconds), If one or more condition(s) are not met, you will get screen pop-up notification and an automated email will be sent to the receiver using sender’s smtp server address, email address and password.
+
+If an exception or error occured, the software will stop running with an error message. Fix your inputs and run it again.
 
 # •	What does Stop button do?
 
-If you need to update your inputs or you don’t want to keep System WATCHDOG running, simply click on Stop.
+If you need to update your inputs or you don’t want to keep the software running, simply click on Stop.
 
 # • Why after clicking on Start, the software start instantly monitoring while the time interval is set to 60 seconds?
 
-SWD or System WatchDog will instantly run a first and only 1 thread regardless of the time interval you set.
+SAW or System Automated Watchdog will instantly run a first and only 1 thread regardless of the time interval you set.
 
 # •	Why after clicking on Stop, I still getting po-up notifications and alerting emails?
 
-When you click on Stop, System WTACHDOG will be stopped after finishing the running threads or the running tasks, so it’s a very normal behavior. 
+When you click on Stop, SAW will be stopped after finishing the running threads or the running tasks, so it’s a very normal behavior. 
 
 
 
