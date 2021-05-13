@@ -11,7 +11,7 @@ To successfully compile code with pyinstaller:
 
 - First install needed librairies with  `pip install -r requirements.txt`
 - Add icon_path for show_toast notification.
-- Compile the code using pyinstaller by running this command:   `pyinstaller --onefile myfile.py` or install the software via the provided setup.
+- Compile the code using pyinstaller by running this command:   `pyinstaller --onefile SAW.py` or install the software via the provided setup.
 
 
 ![System WATCHDOG.gif](https://github.com/IT-Support-L2/System-WATCHDOG/blob/main/SWD.gif)
