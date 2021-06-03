@@ -1,9 +1,9 @@
 # SAW: System Automated Watchdog for Windows.
 
-Using PAGE as GUI drawer but I modified many parts of the generated GUI code to exactly meet my needs. 
-Using python 3.8.5 and tkinter. I used While loop with tkinter which should cause GUI freeze but I bypassed this inconvenience and I broke the limits! 🙏🙏🙏
+Designed with PAGE but I modified many parts of the generated GUI code to exactly meet my needs. 
+Using python 3.8.5 and tkinter. I used While loop with tkinter which should cause GUI freeze but I bypassed this inconvenience and I broke the limits!
 
-successfully tested on Windows 10 pro and Windows Server 2016/2019.
+Successfully tested on Windows 10 pro and Windows Server 2016/2019.
 
 Computer Resource Monitoring which display pop-up notification and automated alerting email is sent if conditions are not met.
 
