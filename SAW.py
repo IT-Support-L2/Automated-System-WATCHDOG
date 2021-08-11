@@ -1522,38 +1522,38 @@ class App():
 
             
         if not cpu_check():
-            t.show_toast("Warning!", "CPU Usage is greater than " + ' ' + str(self.cpu.get()) + '!', icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=5) 
+            t.show_toast("Warning!", "CPU Usage is greater than " + ' ' + str(self.cpu.get()) + '!', icon_path='C:/Users/user/folder/alarm.ico', duration=5) 
             subject = 'Alert! - CPU Usage is greater than ' + ' ' + str(self.cpu.get()) + '!'
             email_warning(subject)
 
         if not disc_space_check():
-            t.show_toast("Warning!", "Available disk space is less than " + ' ' + str(self.storage.get()) + '!', icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=5)
+            t.show_toast("Warning!", "Available disk space is less than " + ' ' + str(self.storage.get()) + '!', icon_path='C:/Users/user/folder/alarm.ico', duration=5)
             subject = "Alert! - Available disk space is less than " + ' ' + str(self.storage.get()) + '!'
             email_warning(subject)
 
         if not available_memory_check():
-            t.show_toast("Warning!", "Available memory is less than " + ' ' + str(self.ram.get()) + ' GB' + '!', icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=5)
+            t.show_toast("Warning!", "Available memory is less than " + ' ' + str(self.ram.get()) + ' GB' + '!', icon_path='C:/Users/user/folder/alarm.ico', duration=5)
             subject = "Alert! - Available memory is less than " + ' ' + str(self.ram.get()) + ' GB' + '!'
             email_warning(subject)
 
         if not upload_speed():
-            t.show_toast("Warning!", "Low upload speed! Upload speed is less than " + ' ' + str(self.upload_sp.get()) + ' MB' + '!', icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=5)
+            t.show_toast("Warning!", "Low upload speed! Upload speed is less than " + ' ' + str(self.upload_sp.get()) + ' MB' + '!', icon_path='C:/Users/user/folder/alarm.ico', duration=5)
             subject = "Alert! - Low upload speed! Upload speed is less than "  + ' ' + str(self.upload_sp.get()) + ' MB' + '!'
             email_warning(subject)
 
         if not download_speed():
-            t.show_toast("Warning!", "Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + ' MB' + '!', icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=5)
+            t.show_toast("Warning!", "Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + ' MB' + '!', icon_path='C:/Users/user/folder/alarm.ico', duration=5)
             subject = "Alert! - Low download speed! Download speed is less than " + ' ' + str(self.download_sp.get()) + ' MB' + '!'
             email_warning(subject)
 
 
         if not latency_check():
-            t.show_toast("Warning!", "High Latency! Latency is higher than " + ' ' + str(self.latency.get()) + ' MS' + '!', icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=5)
+            t.show_toast("Warning!", "High Latency! Latency is higher than " + ' ' + str(self.latency.get()) + ' MS' + '!', icon_path='C:/Users/user/folder/alarm.ico', duration=5)
             subject = "Alert! - High Latency! Latency is higher than " + ' ' + str(self.latency.get()) + ' MS' + '!'
             email_warning(subject)
 
         if not ping_ip():
-            t.show_toast("Warning!", "The" + " " + str(self.Ping.get()) + " " + "IP Address is unreachable, Request timed out!", icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=5)
+            t.show_toast("Warning!", "The" + " " + str(self.Ping.get()) + " " + "IP Address is unreachable, Request timed out!", icon_path='C:/Users/user/folder/alarm.ico', duration=5)
             subject = "Alert! - Unreachable IP, Request timed out!" + ' ' + str(self.Ping.get()) + '!'
             email_warning(subject)
 
@@ -1573,13 +1573,13 @@ class App():
     def StartTask(self):
         t = ToastNotifier()
         if self.cpu.get() == 0 or self.ram.get() == 0 or self.storage.get() == 0 or self.upload_sp.get() == 0 or self.download_sp.get() == 0 or self.latency.get() == 0:
-            t.show_toast("Inputs must be greater than 0!", icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=10)
+            t.show_toast("Inputs must be greater than 0!", icon_path='C:/Users/user/folder/alarm.ico', duration=10)
             self._resetbutton()
         if self.Ping.get().startswith('0') or self.Ping.get().startswith('255'):
-            t.show_toast("IP address could not start with 0 or 255!", icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=10)
+            t.show_toast("IP address could not start with 0 or 255!", icon_path='C:/Users/user/folder/alarm.ico', duration=10)
             self._resetbutton()
         if self.seconds.get() < 20:
-            t.show_toast("Timer must be equal to or greater than 20!", icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=10)
+            t.show_toast("Timer must be equal to or greater than 20!", icon_path='C:/Users/user/folder/alarm.ico', duration=10)
             self._resetbutton()
         else:
             while self.running:
@@ -1588,15 +1588,15 @@ class App():
                     time.sleep(self.seconds.get()) 
 
                 except smtplib.SMTPAuthenticationError:
-                    t.show_toast("Wrong email or password! check your credentails and try again.", icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=10)
+                    t.show_toast("Wrong email or password! check your credentails and try again.", icon_path='C:/Users/user/folder/alarm.ico', duration=10)
                     self._resetbutton()
                     
                 except smtplib.SMTPConnectError:
-                    t.show_toast("Connection error! Please try again.", icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=10)
+                    t.show_toast("Connection error! Please try again.", icon_path='C:/Users/user/folder/alarm.ico', duration=10)
                     self._resetbutton()
                     
                 except smtplib.SMTPException:
-                    t.show_toast("Unexpected error occured! Please try again.", icon_path='C:/Users/hamdi/Downloads/SAW/SAW/alarm.ico', duration=10)
+                    t.show_toast("Unexpected error occured! Please try again.", icon_path='C:/Users/user/folder/alarm.ico', duration=10)
                     self._resetbutton()
                 
 
